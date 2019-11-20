@@ -1,0 +1,94 @@
+
+body{
+  margin:0;
+}
+.headContainer{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 0%;
+  background-color:burlywood;
+}
+
+.logo{
+  background-color: red;
+  width:200px;
+  height: 100%;
+  margin-left: 5%;
+}
+
+.navControls {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  margin-right: 5%;
+  align-items: center;
+}
+
+.home:hover{
+  cursor: pointer;
+}
+.contact:hover{
+  cursor: pointer;
+}
+.MeetTheTeam:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+.peopleContainer {
+  display: flex;
+  justify-content: space-around
+}
+
+.personContainer {
+  width: 300px;
+  height: 350px;
+  background-position:center;
+  background-size: contain;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.personTextContainer{
+  margin-top: 88%;
+  text-align: right;
+  padding-right:15%;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  color:whitesmoke;
+  padding-bottom: 5%;
+  padding-top:1%;
+}
+
+.personTextContainer:hover{
+  background-color: rgba(0,0,0,0.5);
+}
+
+.personTextContainer:hover{
+  margin-top: 30%;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+
+.personName {
+  font-size: 20px;
+}
+
+.personTitle {
+  font-size: 16px;
+  color: burlywood;
+}
+
+.personDescription {
+  margin-top: 5%;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
