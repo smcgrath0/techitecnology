@@ -5,12 +5,12 @@ function init() {
   document.querySelector('.hamburger').addEventListener('click', (event) => {
     document.querySelector('.hamburger').style.display = "none";
     document.querySelector('.xButton').style.display = "flex";
-    document.querySelector('.dropdown').style.display = "block"
+    document.querySelector('.dropdown').style.top = "100px"
   })
   document.querySelector('.xButton').addEventListener('click', (event) => {
     document.querySelector('.hamburger').style.display = "block";
     document.querySelector('.xButton').style.display = "none";
-    document.querySelector('.dropdown').style.display = "none"
+    document.querySelector('.dropdown').style.top = "-200px"
   })
   document.querySelector(".homedd").addEventListener('click', (event) => {
     document.querySelector('.hamburger').style.display = "block";
@@ -34,7 +34,6 @@ function getNamesData() {
     dataType: 'json',
     url: 'https://techi.envivent.com/names.json',
     success: function (result) {
-      console.log('2) AJAX Success function called, with the following result:', result);
       var employees = [];
       result.employees.forEach( (employee) => {
         employees.push({ id: employee.id, name: employee.first_name + ' ' + employee.last_name });
@@ -70,8 +69,6 @@ function getDescriptionData(people, random) {
     dataType: 'json',
     url: 'https://techi.envivent.com/description.json',
     success: function (result) {
-      console.log('2) AJAX Success function called, with the following result:', result);
-      var employees = [];
       result.employees.forEach((employee) => {
         people.forEach((employee2) => {
           if (employee2.id === employee.id) {
@@ -96,8 +93,6 @@ function getImagesData(people, random) {
     dataType: 'json',
     url: 'https://techi.envivent.com/images.json',
     success: function (result) {
-      console.log('2) AJAX Success function called, with the following result:', result);
-      var employees = [];
       result.employees.forEach((employee) => {
         people.forEach((employee2) => {
           if (employee2.id === employee.id) {
@@ -109,8 +104,7 @@ function getImagesData(people, random) {
       for (var i = 0; i < 3; i++) {
         document.querySelector('.personContainer' + (i + 1)).style.backgroundImage = "url("+people[i + random].full+")"
       }
-
-      return employees;
+      return people;
     }
   }
   $.ajax(ajaxConfig);

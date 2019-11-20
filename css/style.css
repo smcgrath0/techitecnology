@@ -5,6 +5,8 @@ body{
 header{
   display: flex;
   justify-content: center;
+  z-index: 2;
+  background-color:white
 }
 .headContainer{
   height: 100px;
@@ -12,7 +14,7 @@ header{
   display: flex;
   justify-content: space-between;
   margin: 1% 0% 0% 0%;
-  /* background-color:burlywood; */
+  z-index: 1;
 }
 
 .logo{
@@ -32,6 +34,7 @@ header{
   margin-right: 5%;
   align-items:flex-end;
   color: #40e0d0;
+  font-size: 26px;
 }
 
 .home:hover{
@@ -234,10 +237,12 @@ footer{
 }
 
 .dropdown{
-  display:none;
+  display:block;
   position: absolute;
-  background-position-y: 100px;
+  top: -200px;
   width:100%;
+  transition-duration: 1s;
+  transition-timing-function: ease;
 }
 
 .dropdown > div > p {
