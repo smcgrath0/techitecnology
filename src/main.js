@@ -3,11 +3,29 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
   var people = getNamesData();
   document.querySelector('.hamburger').addEventListener('click', (event) => {
-    if (document.querySelector('.dropdown').style.display === "block") {
-      document.querySelector('.dropdown').style.display = "none"
-    } else {
-      document.querySelector('.dropdown').style.display = "block"
-    }
+    document.querySelector('.hamburger').style.display = "none";
+    document.querySelector('.xButton').style.display = "flex";
+    document.querySelector('.dropdown').style.display = "block"
+  })
+  document.querySelector('.xButton').addEventListener('click', (event) => {
+    document.querySelector('.hamburger').style.display = "block";
+    document.querySelector('.xButton').style.display = "none";
+    document.querySelector('.dropdown').style.display = "none"
+  })
+  document.querySelector(".homedd").addEventListener('click', (event) => {
+    document.querySelector('.hamburger').style.display = "block";
+    document.querySelector('.xButton').style.display = "none";
+    document.querySelector('.dropdown').style.display = "none"
+  })
+  document.querySelector(".MeetTheTeamdd").addEventListener('click', (event) => {
+    document.querySelector('.hamburger').style.display = "block";
+    document.querySelector('.xButton').style.display = "none";
+    document.querySelector('.dropdown').style.display = "none"
+  })
+  document.querySelector(".Contactdd").addEventListener('click', (event) => {
+    document.querySelector('.hamburger').style.display = "block";
+    document.querySelector('.xButton').style.display = "none";
+    document.querySelector('.dropdown').style.display = "none"
   })
 }
 
@@ -23,6 +41,21 @@ function getNamesData() {
       })
       var random = Math.floor(Math.random() * 5);
       for (var i = 0; i < 3; i++) {
+        if (employees[i + random].name.length >= 16) {
+          document.querySelector('.personTextContainer' + (i+1)).style['margin-top'] = '69%';
+          document.querySelector('.personTextContainer' + (i + 1)).onmouseenter = (event) => {
+            event.target.style['margin-top'] = '0%';
+          }
+
+          document.querySelector('.personTextContainer' + (i + 1)).onmouseleave = (event) => {
+            event.target.style['margin-top'] = '69%';
+          }
+        }
+        if (employees[i + random].name === 'Michelangelo Buonarroti'){
+          document.querySelector('#personName' + (i + 1)).style.color = 'black';
+        }
+
+
         document.querySelector('#personName' + (i + 1)).innerHTML = employees[i + random].name
       }
       getDescriptionData(employees, random)
