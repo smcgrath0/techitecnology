@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  // var employees = [];
   var people = getNamesData();
-  // people = getDescriptionData(people);
-
+  document.querySelector('.hamburger').addEventListener('click', (event) => {
+    if (document.querySelector('.dropdown').style.display === "block") {
+      document.querySelector('.dropdown').style.display = "none"
+    } else {
+      document.querySelector('.dropdown').style.display = "block"
+    }
+  })
 }
 
 function getNamesData() {
