@@ -10,7 +10,7 @@ function init() {
   document.querySelector('.xButton').addEventListener('click', (event) => {
     document.querySelector('.hamburger').style.display = "block";
     document.querySelector('.xButton').style.display = "none";
-    document.querySelector('.dropdown').style.top = "-200px"
+    document.querySelector('.dropdown').style.top = "-400px"
   })
   document.querySelector(".homedd").addEventListener('click', (event) => {
     document.querySelector('.hamburger').style.display = "block";
